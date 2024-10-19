@@ -34,34 +34,44 @@ const NavbarMenu = [
 const Navbar = () => {
   return (
     <>
-      <nav className="flex justify-between items-center">
-        {/* LOGO SECTION */}
-        <div className="">
-          <a href="">
-            Plying / <span>Market</span>
-          </a>
-        </div>
-        {/* MENU SECTION */}
-        <ul>
-          {NavbarMenu.map((i) => {
-            return (
-              <li key={i.id}>
-                <a href={i.link}>{i.title}</a>
-              </li>
-            );
-          })}
+      <div className="bg-brandDark text-white">
+        <nav className="container flex justify-between items-center">
+          {/* LOGO SECTION */}
           <div className="">
-            <a href="">
-              <SlEarphones />
+            <a href="" className="text-xl font-bold uppercase">
+              Plying /{" "}
+              <span className="font-extralight text-white">Market</span>
             </a>
           </div>
-        </ul>
+          {/* MENU SECTION */}
+          <div className="hidden md:block">
+            <ul className="flex items-center gap-4">
+              {NavbarMenu.map((i) => {
+                return (
+                  <li key={i.id}>
+                    <a
+                      href={i.link}
+                      className="inline-block text-sm py-2 px-3 uppercase"
+                    >
+                      {i.title}
+                    </a>
+                  </li>
+                );
+              })}
+              <div className="text-xl ps-14">
+                <a href="">
+                  <SlEarphones />
+                </a>
+              </div>
+            </ul>
+          </div>
 
-        {/* MOBILE HAMBURGER SECTION */}
-        <div className="">
-          <MdMenu />
-        </div>
-      </nav>
+          {/* MOBILE HAMBURGER SECTION */}
+          <div className="md:hidden">
+            <MdMenu />
+          </div>
+        </nav>
+      </div>
     </>
   );
 };
