@@ -1,7 +1,7 @@
-import { i } from "framer-motion/client";
 import React from "react";
 import { MdMenu } from "react-icons/md";
 import { SlEarphones } from "react-icons/sl";
+import { UpdateFollower } from "react-mouse-follower";
 
 const NavbarMenu = [
   {
@@ -34,7 +34,7 @@ const NavbarMenu = [
 const Navbar = () => {
   return (
     <>
-      <div className="bg-brandDark text-white">
+      <div className="bg-brandDark text-white py-8">
         <nav className="container flex justify-between items-center">
           {/* LOGO SECTION */}
           <div className="">
@@ -49,26 +49,44 @@ const Navbar = () => {
               {NavbarMenu.map((i) => {
                 return (
                   <li key={i.id}>
-                    <a
-                      href={i.link}
-                      className="inline-block text-sm py-2 px-3 uppercase"
-                    >
-                      {i.title}
-                    </a>
+                    <UpdateFollower>
+                      mouseOptions=
+                      {{
+                        backgroundColor: "white",
+                        zIndex: 999,
+                        followSpeed: 1.5,
+                        scale: 1.5,
+                        mixBlendMode: "difference",
+                      }}
+                      <a
+                        href={i.link}
+                        className="inline-block text-sm py-2 px-3 uppercase"
+                      >
+                        {i.title}
+                      </a>
+                    </UpdateFollower>
                   </li>
                 );
               })}
-              <div className="text-xl ps-14">
-                <a href="">
+              <UpdateFollower>
+                mouseOptions=
+                {{
+                  backgroundColor: "white",
+                  zIndex: 999,
+                  followSpeed: 1.5,
+                  scale: 1.5,
+                  mixBlendMode: "difference",
+                }}
+                <button className="text-xl ps-14">
                   <SlEarphones />
-                </a>
-              </div>
+                </button>
+              </UpdateFollower>
             </ul>
           </div>
 
           {/* MOBILE HAMBURGER SECTION */}
           <div className="md:hidden">
-            <MdMenu />
+            <MdMenu className="text-4xl" />
           </div>
         </nav>
       </div>
