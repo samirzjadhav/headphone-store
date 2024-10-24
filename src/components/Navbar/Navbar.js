@@ -26,71 +26,68 @@ const NavbarMenu = [
   },
   {
     id: 5,
-    title: "Contsct",
+    title: "Contact",
     link: "#",
   },
 ];
 
 const Navbar = () => {
   return (
-    <>
-      <div className="bg-brandDark text-white py-8">
-        <nav className="container flex justify-between items-center">
-          {/* LOGO SECTION */}
-          <div className="">
-            <a href="" className="text-xl font-bold uppercase">
-              Plying /{" "}
-              <span className="font-extralight text-white">Market</span>
-            </a>
-          </div>
-          {/* MENU SECTION */}
-          <div className="hidden md:block">
-            <ul className="flex items-center gap-4">
-              {NavbarMenu.map((i) => {
-                return (
-                  <li key={i.id}>
-                    <UpdateFollower>
-                      mouseOptions=
-                      {{
-                        backgroundColor: "white",
-                        zIndex: 999,
-                        followSpeed: 1.5,
-                        scale: 1.5,
-                        mixBlendMode: "difference",
-                      }}
-                      <a
-                        href={i.link}
-                        className="inline-block text-sm py-2 px-3 uppercase"
-                      >
-                        {i.title}
-                      </a>
-                    </UpdateFollower>
-                  </li>
-                );
-              })}
-              <UpdateFollower>
-                mouseOptions=
-                {{
+    <div className="bg-brandDark text-white py-8">
+      <nav className="container flex justify-between items-center">
+        {/* LOGO SECTION */}
+        <div>
+          <a href="#" className="text-xl font-bold uppercase">
+            Plying / <span className="font-extralight text-white">Market</span>
+          </a>
+        </div>
+        {/* MENU SECTION */}
+        <div className="hidden md:block">
+          <ul className="flex items-center gap-4">
+            {NavbarMenu.map((item) => (
+              <li key={item.id}>
+                <UpdateFollower
+                  mouseOptions={{
+                    backgroundColor: "white",
+                    zIndex: 999,
+                    followSpeed: 1.5,
+                    scale: 1.5,
+                    mixBlendMode: "difference",
+                  }}
+                >
+                  <a
+                    href={item.link}
+                    className="inline-block text-sm py-2 px-3 uppercase"
+                  >
+                    {item.title}
+                  </a>
+                </UpdateFollower>
+              </li>
+            ))}
+            <li>
+              <UpdateFollower
+                mouseOptions={{
                   backgroundColor: "white",
                   zIndex: 999,
                   followSpeed: 1.5,
                   scale: 1.5,
                   mixBlendMode: "difference",
                 }}
+              >
                 <button className="text-xl ps-14">
                   <SlEarphones />
                 </button>
               </UpdateFollower>
-            </ul>
-          </div>
+            </li>
+          </ul>
+        </div>
 
-          {/* MOBILE HAMBURGER SECTION */}
-          <div className="md:hidden">
-            <MdMenu className="text-4xl" />
-          </div>
-        </nav>
-      </div>
-    </>
+        {/* MOBILE HAMBURGER SECTION */}
+        <div className="md:hidden">
+          <MdMenu className="text-4xl" />
+        </div>
+      </nav>
+    </div>
   );
 };
 
