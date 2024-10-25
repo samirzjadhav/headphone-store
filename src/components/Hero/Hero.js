@@ -62,6 +62,33 @@ const Hero = () => {
                 Buy and Listen
               </button>
               {/* HEADPHONE LIST SEPARATOR */}
+              <div className="flex items-center justify-center md:justify-start gap-4 !mt-24">
+                <div className="w-20 h-[1px] bg-white"></div>
+                <p>Top Headphone for you</p>
+                <div className="w-20 h-[1px] bg-white"></div>{" "}
+              </div>
+              {/* HEADPHONE LIST SWITCHER */}
+              <div className="grid grid-cols-3 gap-10">
+                {headphoneData.map((item) => {
+                  return (
+                    <div className="grid grid-cols-2 place-items-center cursor-pointer gap-[10px]">
+                      <div>
+                        <img
+                          src={item.image}
+                          alt={item.alt}
+                          className="w-[200px]"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <p className="text-base font-bold">{item.price}</p>
+                        <p className="text-xs font-normal text-nowrap">
+                          {item.model}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
           {/* Hero Image */}
