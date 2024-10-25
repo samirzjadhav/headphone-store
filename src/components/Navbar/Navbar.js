@@ -3,6 +3,7 @@ import { MdMenu } from "react-icons/md";
 import { SlEarphones } from "react-icons/sl";
 import { UpdateFollower } from "react-mouse-follower";
 
+
 const NavbarMenu = [
   {
     id: 1,
@@ -33,12 +34,13 @@ const NavbarMenu = [
 
 const Navbar = () => {
   return (
-    <div className="bg-brandDark text-white py-8">
+    <div className="bg-brandDark text-white py-8 font-varela">
       <nav className="container flex justify-between items-center">
         {/* LOGO SECTION */}
         <div>
           <a href="#" className="text-xl font-bold uppercase">
-            Plying / <span className="font-extralight text-white">Market</span>
+            Plying /{" "}
+            <span className="font-extralight text-white/70">Market</span>
           </a>
         </div>
         {/* MENU SECTION */}
