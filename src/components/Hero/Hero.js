@@ -6,6 +6,7 @@ import { IoReturnUpBack } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { UpdateFollower } from "react-mouse-follower";
 import { AnimatePresence, motion } from "framer-motion";
+import { div } from "framer-motion/client";
 
 const fadeUp = (delay) => {
   return {
@@ -124,7 +125,21 @@ const Hero = () => {
                 </motion.p>
               </AnimatePresence>
 
-              <UpdateFollower>
+              <UpdateFollower
+                mouseOptions={{
+                  backgroundColor: currentHeadphone.bgColor,
+                  zIndex: 9999,
+                  followSpeed: 0.5,
+                  rotate: -720,
+                  mixBlendMode: "difference",
+                  scale: 10,
+                  backgroundElement: (
+                    <div>
+                      <img src={currentHeadphone.image} alt="" />
+                    </div>
+                  ),
+                }}
+              >
                 <AnimatePresence mode="wait">
                   <motion.button
                     key={currentHeadphone.id}
