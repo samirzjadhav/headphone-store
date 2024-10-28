@@ -191,11 +191,25 @@ const Hero = () => {
           {/* Hero Image */}
 
           <div className="flex flex-col justify-end items-center">
-            <img
-              src={currentHeadphone.image}
-              alt={currentHeadphone.alt}
-              className="w-[300px] md:w-[400px] xl:w-[550px]"
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentHeadphone.id}
+                initial={{ opacity: 0, scale: 0.9, y: 100 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.9,
+                  y: 100,
+                  transition: {
+                    duration: 0.5,
+                  },
+                }}
+                src={currentHeadphone.image}
+                alt={currentHeadphone.alt}
+                className="w-[300px] md:w-[400px] xl:w-[550px]"
+              />
+            </AnimatePresence>
           </div>
 
           {/* WhatApp Icon */}
