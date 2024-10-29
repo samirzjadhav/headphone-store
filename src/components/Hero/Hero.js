@@ -164,25 +164,36 @@ const Hero = () => {
               <div className="grid grid-cols-3 gap-10">
                 {headphoneData.map((item) => {
                   return (
-                    <div
-                      key={item.id}
-                      onClick={() => handleCurrentHeadphone(item)}
-                      className="grid grid-cols-2 place-items-center cursor-pointer gap-[10px]"
+                    <UpdateFollower
+                      mouseOptions={{
+                        backgroundColor: item.bgColor,
+                        zIndex: 9999,
+                        followSpeed: 0.5,
+                        scale: 5,
+                        text: "View Details",
+                        textFontSize: "3px",
+                      }}
                     >
-                      <div>
-                        <img
-                          src={item.image}
-                          alt={item.alt}
-                          className="w-[200px]"
-                        />
+                      <div
+                        key={item.id}
+                        onClick={() => handleCurrentHeadphone(item)}
+                        className="grid grid-cols-2 place-items-center cursor-pointer gap-[10px]"
+                      >
+                        <div>
+                          <img
+                            src={item.image}
+                            alt={item.alt}
+                            className="w-[200px]"
+                          />
+                        </div>
+                        <div className="space-y-2">
+                          <p className="text-base font-bold">{item.price}</p>
+                          <p className="text-xs font-normal text-nowrap">
+                            {item.model}
+                          </p>
+                        </div>
                       </div>
-                      <div className="space-y-2">
-                        <p className="text-base font-bold">{item.price}</p>
-                        <p className="text-xs font-normal text-nowrap">
-                          {item.model}
-                        </p>
-                      </div>
-                    </div>
+                    </UpdateFollower>
                   );
                 })}
               </div>
