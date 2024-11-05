@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { UpdateFollower } from "react-mouse-follower";
 import Hero from "./components/Hero/Hero";
 import Service from "./components/Services/Service";
+import Banner from "./components/Banner/Banner";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
           followSpeed: 1.5,
         }}
       >
-        <Service />\
+        <Service />
+        <Banner />
       </UpdateFollower>
     </main>
   );
