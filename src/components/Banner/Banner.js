@@ -54,9 +54,14 @@ const Banner = () => {
                   scale: 5,
                 }}
               >
-                <button className="border-2 border-[#e33343] text-[#e33343] px-6 py-2 rounded-md hover:bg-[#e33343] hover:text-white">
+                <motion.button
+                  variants={fadeUp(1.3)}
+                  initial="hidden"
+                  whileInView="show"
+                  className="border-2 border-[#e33343] text-[#e33343] px-6 py-2 rounded-md hover:bg-[#e33343] hover:text-white"
+                >
                   Shop Now
-                </button>
+                </motion.button>
               </UpdateFollower>
             </div>
           </div>
