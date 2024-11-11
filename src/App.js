@@ -6,6 +6,7 @@ import Service from "./components/Services/Service";
 import Banner from "./components/Banner/Banner";
 import BannerText from "./components/Banner/BannerText";
 import Blogs from "./components/Blogs/Blogs";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Banner />
         <BannerText />
         <Blogs />
+        <Footer />
       </UpdateFollower>
     </main>
   );
