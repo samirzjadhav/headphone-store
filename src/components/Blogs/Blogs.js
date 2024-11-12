@@ -38,34 +38,33 @@ const BlogsData = [
 
 const Blogs = () => {
   return (
-    <section className="">
+    <section>
       <div className="container">
         <h1 className="text-3xl font-bold text-center pb-10">Blogs</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
-          {BlogsData.map((data) => {
-            return (
-              <UpdateFollower
-                mouseOptions={{
-                  backgroundColor: "black",
-                  zIndex: 999,
-                  followSpeed: 1.5,
-                  text: "read",
-                  textFontSize: "3px",
-                  scale: 5,
-                }}
-              >
-                <div className="flex flex-col items-center justify-center p-5 max-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:-translate-y-2 duration-300">
-                  <img src={data.img} alt="" />
-                  <div className="space-y-2">
-                    <h1 className="text-xl font-bold line-clamp-2">
-                      {data.title}
-                    </h1>
-                    <p className="line-clamp-2">{data.desc}</p>
-                  </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+          {BlogsData.map((data) => (
+            <UpdateFollower
+              key={data.id} // Use data.id as the unique key for each component
+              mouseOptions={{
+                backgroundColor: "black",
+                zIndex: 999,
+                followSpeed: 1.5,
+                text: "read",
+                textFontSize: "3px",
+                scale: 5,
+              }}
+            >
+              <div className="flex flex-col items-center justify-center p-5 max-w-[300px] mx-auto shadow-lg rounded-md bg-white hover:-translate-y-2 duration-300">
+                <img src={data.img} alt={data.title} />
+                <div className="space-y-2">
+                  <h1 className="text-xl font-bold line-clamp-2">
+                    {data.title}
+                  </h1>
+                  <p className="line-clamp-2">{data.desc}</p>
                 </div>
-              </UpdateFollower>
-            );
-          })}
+              </div>
+            </UpdateFollower>
+          ))}
         </div>
       </div>
     </section>

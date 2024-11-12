@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Headphone1 from "../../assets/headphone.png";
 import Headphone2 from "../../assets/headphone2.png";
 import Headphone3 from "../../assets/headphone3.png";
-import { IoReturnUpBack } from "react-icons/io5";
+// import { IoReturnUpBack } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa";
 import { UpdateFollower } from "react-mouse-follower";
 import { AnimatePresence, motion } from "framer-motion";
-import { div } from "framer-motion/client";
+// import { div } from "framer-motion/client";
 
 const fadeUp = (delay) => {
   return {
@@ -162,40 +162,38 @@ const Hero = () => {
               </div>
               {/* HEADPHONE LIST SWITCHER */}
               <div className="grid grid-cols-3 gap-10">
-                {headphoneData.map((item) => {
-                  return (
-                    <UpdateFollower
-                      mouseOptions={{
-                        backgroundColor: item.bgColor,
-                        zIndex: 9999,
-                        followSpeed: 0.5,
-                        scale: 5,
-                        text: "View Details",
-                        textFontSize: "3px",
-                      }}
+                {headphoneData.map((item) => (
+                  <UpdateFollower
+                    key={item.id} // Assign key here for each UpdateFollower component
+                    mouseOptions={{
+                      backgroundColor: item.bgColor,
+                      zIndex: 9999,
+                      followSpeed: 0.5,
+                      scale: 5,
+                      text: "View Details",
+                      textFontSize: "3px",
+                    }}
+                  >
+                    <div
+                      onClick={() => handleCurrentHeadphone(item)}
+                      className="grid grid-cols-2 place-items-center cursor-pointer gap-[10px]"
                     >
-                      <div
-                        key={item.id}
-                        onClick={() => handleCurrentHeadphone(item)}
-                        className="grid grid-cols-2 place-items-center cursor-pointer gap-[10px]"
-                      >
-                        <div>
-                          <img
-                            src={item.image}
-                            alt={item.alt}
-                            className="w-[200px]"
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <p className="text-base font-bold">{item.price}</p>
-                          <p className="text-xs font-normal text-nowrap">
-                            {item.model}
-                          </p>
-                        </div>
+                      <div>
+                        <img
+                          src={item.image}
+                          alt={item.alt}
+                          className="w-[200px]"
+                        />
                       </div>
-                    </UpdateFollower>
-                  );
-                })}
+                      <div className="space-y-2">
+                        <p className="text-base font-bold">{item.price}</p>
+                        <p className="text-xs font-normal text-nowrap">
+                          {item.model}
+                        </p>
+                      </div>
+                    </div>
+                  </UpdateFollower>
+                ))}
               </div>
             </div>
           </div>
@@ -225,7 +223,7 @@ const Hero = () => {
 
           {/* WhatApp Icon */}
           <div className="text-3xl text-white fixed botttom-10 right-10 hover:rotate-[360deg] duration-500 z-[99999] mix-blend-difference">
-            <a href="">
+            <a href="/">
               <FaWhatsapp />
             </a>
           </div>
