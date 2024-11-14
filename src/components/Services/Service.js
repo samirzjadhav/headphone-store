@@ -9,7 +9,7 @@ export const fadeUp = (delay) => {
   return {
     hidden: {
       opacity: 0,
-      y: 1000,
+      y: 100,
     },
     show: {
       opacity: 1,
@@ -67,7 +67,7 @@ const Service = () => {
                 mouseOptions={{
                   backgroundColor: "white",
                   zIndex: 999,
-                  followSpeed: 1.5,
+                  followSpeed: 0.5,
                   scale: 5,
                   rotate: 720,
                   mixBlendMode: "darken",
@@ -82,7 +82,7 @@ const Service = () => {
                   variants={fadeUp(data.delay)}
                   initial="hidden"
                   whileInView="show"
-                  className="flex flex-col items-center justify-center p-5 max-w-[300px] h-[300px] mx-auto shadow-lg"
+                  className="flex flex-col items-center justify-center p-5 max-w-[300px] h-[300px] mx-auto shadow-lg rounded-xl bg-white"
                 >
                   <img
                     src={data.icon}

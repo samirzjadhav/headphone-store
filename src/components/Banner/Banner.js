@@ -39,12 +39,16 @@ const Banner = () => {
               >
                 The Latest Headphones With The Latest Technology
               </motion.h1>
-              <p>
+              <motion.p
+                variants={fadeUp(0.9)}
+                initial="hidden"
+                whileInView="show"
+              >
                 Headphone is a pair of small loudspeaker drivers worn on or
                 around the head over a user's ears. They are electroacoustic
                 transducers, which convert an electrical signal to a
                 corresponding sound.
-              </p>
+              </motion.p>
               <UpdateFollower
                 mouseOptions={{
                   backgroundColor: "white",
